@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   cakes: any;
-  thereISerror: any = false;
+  thereISerror: any;
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.route.queryParams.subscribe((query) => {
       // alert('Query is changed' + JSON.stringify(query));
@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
           this.cakes = response.data;
           if (this.cakes.length == 0) {
             this.thereISerror = true;
+          } else {
+            this.thereISerror = false;
           }
         },
         (error) => {

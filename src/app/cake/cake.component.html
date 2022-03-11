@@ -25,9 +25,8 @@
             <strong>{{ cake.name }}</strong>
           </div>
           <div class="content-right-product-amount">
-            <i class="fa fa-inr" style="color: #df001a"></i>Price:{{
-              cake.price
-            }}
+            <i class="fa fa-inr" style="color: #8f1926"></i>Price :
+            {{ cake.price | currency: "INR":"symbol":"3.0" }}
             <!-- {{ cake.price | discountpipe }} -->
           </div>
           <div class="cart">
