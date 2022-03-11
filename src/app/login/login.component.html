@@ -1,0 +1,47 @@
+<form class="login" (submit)="onSubmit()" [formGroup]="loginForm">
+  <input
+    formControlName="email"
+    class="form-control"
+    placeholder="Email"
+    [(ngModel)]="email"
+    name="email"
+  />
+
+  <div
+    class="errormessage"
+    *ngIf="submitted && loginForm.controls?.['email']?.['errors']"
+  >
+    <label *ngIf="loginForm.controls?.['email']?.['errors']?.['required']"
+      >Email is Required</label
+    >
+    <label *ngIf="loginForm.controls?.['email']?.['errors']?.['email']"
+      >Email is Invalid</label
+    >
+  </div>
+  <input
+    type="password"
+    formControlName="password"
+    class="form-control"
+    placeholder="Password"
+    [(ngModel)]="password"
+    name="password"
+    appHighlight
+  />
+  <div
+    class="errormessage"
+    *ngIf="submitted && loginForm.controls?.['password']?.['errors']"
+  >
+    <label *ngIf="loginForm.controls?.['password']?.['errors']?.['required']"
+      >Password is Required</label
+    >
+  </div>
+  <button>Login</button>
+  <div>
+    <a
+      style="color: black; font-weight: bold; font-size: 15px"
+      routerLink="/signup"
+      class="link-danger"
+      >New User?</a
+    >
+  </div>
+</form>

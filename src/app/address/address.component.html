@@ -1,0 +1,143 @@
+<div class="container">
+  <h2>ADDRESS</h2>
+  <form (submit)="onSubmit()" [formGroup]="addressForm">
+    <div class="form-group">
+      <!-- Name -->
+      <label>Name</label>
+      <input
+        formControlName="name"
+        class="form-control"
+        pattern="^[a-zA-Z\s]+$"
+        placeholder="Name"
+        [(ngModel)]="name"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['name']?.['errors']"
+      >
+        <label *ngIf="addressForm.controls?.['name']?.['errors']?.['required']"
+          >Name is Required</label
+        >
+        <label *ngIf="addressForm.controls?.['name']?.['errors']?.['pattern']"
+          >Name is Invalid</label
+        >
+      </div>
+      <!-- AreA -->
+      <label>Area</label>
+      <input
+        formControlName="area"
+        class="form-control"
+        placeholder="Area"
+        pattern="^[a-zA-Z\s]+$"
+        [(ngModel)]="area"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['area']?.['errors']"
+      >
+        <label *ngIf="addressForm.controls?.['area']?.['errors']?.['required']"
+          >Aera is Required</label
+        >
+        <label *ngIf="addressForm.controls?.['area']?.['errors']?.['pattern']"
+          >Area is Invalid</label
+        >
+      </div>
+
+      <!-- City -->
+      <label>City</label>
+      <input
+        formControlName="city"
+        class="form-control"
+        placeholder="City"
+        pattern="^[a-zA-Z\s]+$"
+        [(ngModel)]="city"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['city']?.['errors']"
+      >
+        <label *ngIf="addressForm.controls?.['city']?.['errors']?.['required']"
+          >City is Required</label
+        >
+        <label *ngIf="addressForm.controls?.['city']?.['errors']?.['pattern']"
+          >City is Invalid</label
+        >
+      </div>
+
+      <!-- Pincode -->
+      <label>Pincode</label>
+      <input
+        formControlName="pincode"
+        class="form-control"
+        placeholder="Pincode"
+        pattern="^[1-9][0-9]{5}$"
+        [(ngModel)]="pincode"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['pincode']?.['errors']"
+      >
+        <label
+          *ngIf="addressForm.controls?.['pincode']?.['errors']?.['required']"
+          >Pincode is Required</label
+        >
+        <label
+          *ngIf="addressForm.controls?.['pincode']?.['errors']?.['pattern']"
+          >Pincode is Invalid</label
+        >
+      </div>
+
+      <!-- Phone Number -->
+      <label>Phone Number</label>
+      <input
+        formControlName="phonenumber"
+        class="form-control"
+        placeholder="Phone Number"
+        pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$"
+        [(ngModel)]="phonenumber"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['phonenumber']?.['errors']"
+      >
+        <label
+          *ngIf="addressForm.controls?.['phonenumber']?.['errors']?.['required']"
+          >Phone Number is Required</label
+        >
+        <label
+          *ngIf="addressForm.controls?.['phonenumber']?.['errors']?.['pattern']"
+          >Phone number is Invalid</label
+        >
+      </div>
+      <!-- Address -->
+      <label>Address</label>
+      <input
+        formControlName="address"
+        class="form-control"
+        placeholder="Address"
+        [(ngModel)]="address"
+      />
+      <div
+        class="errormessage"
+        *ngIf="submitted && addressForm.controls?.['address']?.['errors']"
+      >
+        <label
+          *ngIf="addressForm.controls?.['address']?.['errors']?.['required']"
+          >Address is Required</label
+        >
+        <label
+          *ngIf="addressForm.controls?.['address']?.['errors']?.['pattern']"
+          >Address is Invalid</label
+        >
+      </div>
+    </div>
+    <br />
+
+    <div class="d-grid gap-2">
+      <button (click)="placeOrder()" class="btn btn-outline-primary">
+        Place Order
+      </button>
+    </div>
+  </form>
+  <br />
+</div>

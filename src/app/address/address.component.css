@@ -1,0 +1,17 @@
+.container {
+  /* width: 600px; */
+  /* border: 2px solid black; */
+}
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+.errormessage {
+  color: red;
+}
+/* .form-group {
+  text-align: center;
+} */
+label {
+  font-weight: bold;
+}

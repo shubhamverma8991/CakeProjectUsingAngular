@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="content">
+    <div class="content-right">
+      <div align="center">
+        <div class="content-right-product">
+          <div>
+            <img
+              (click)="cakeDetail()"
+              [src]="cake.image"
+              class="card-img-top"
+              width="250"
+              height="200"
+            />
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-success"
+              *ngIf="cake.iseggless"
+            >
+              Eggless
+            </button>
+          </div>
+          <div class="content-right-product-p">
+            <strong>{{ cake.name }}</strong>
+          </div>
+          <div class="content-right-product-amount">
+            <i class="fa fa-inr" style="color: #df001a"></i>Price:{{
+              cake.price
+            }}
+            <!-- {{ cake.price | discountpipe }} -->
+          </div>
+          <div class="cart">
+            <a href="" class="btn" (click)="applyDiscount()">Discount</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#FFF"
+  type="ball-scale-multiple"
+>
+  <br />
+  <br />
+  <br />
+  <br />
+  <h1>
+    Welcome
+    <span>{{ name ? name : "" }}</span>
+    To The Shop
+  </h1>
+
+  <p
+    style="
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    "
+  >
+    Please Wait Getting Data...
+  </p>
+</ngx-spinner>
+
+<!-- Model to display welcome message -->
+<!-- <div class="model" *ngIf="loading">
+  <h1>
+    Welcome
+    <span>{{ name ? name : "" }}</span>
+    To The Shop
+  </h1>
+  <div class="lds-facebook">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p>Please wait loading cakes..</p>
+</div> -->
+
+<div class="content">
+  <div class="content-right">
+    <div class="categories-right">All Cakes</div>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton1"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Sort by Price
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li class="dropdown-item" (click)="lowtohigh()">Low to High</li>
+    <li class="dropdown-item" (click)="hightolow()">High to Low</li>
+  </ul>
+</div>
+<!-- 
+<div class="filters">
+  <button type="button" class="btn btn-light" (click)="lowtohigh()">
+    Price Sort : Low To High
+  </button>
+  <button type="button" class="btn btn-light" (click)="hightolow()">
+    Price Sort : High To Low
+  </button>
+</div> -->
+<div class="row">
+  <app-cake
+    class="col-sm"
+    *ngFor="let each of cakes"
+    (discount)="gotDiscount($event)"
+    [cake]="each"
+  ></app-cake>
+  <!-- <app-cake
+    class="col"
+    (discount)="gotDiscount($event)"
+    [cake]="cake1"
+  ></app-cake>
+  <app-cake
+    class="col"
+    (discount)="gotDiscount($event)"
+    [cake]="cake2"
+  ></app-cake>
+  <app-cake
+    class="col"
+    (discount)="gotDiscount($event)"
+    [cake]="cake3"
+  ></app-cake>
+  <app-cake
+    class="col"
+    (discount)="gotDiscount($event)"
+    [cake]="cake4"
+  ></app-cake>
+  <app-cake
+    class="col"
+    (discount)="gotDiscount($event)"
+    [cake]="cake5"
+  ></app-cake> -->
+</div>
+
+<!-- //already a new component is used -->
+<!-- <app-addcake (newData)="dataReceived($event)"></app-addcake> -->

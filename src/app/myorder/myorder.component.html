@@ -1,0 +1,15 @@
+<h1>Orders</h1>
+<div class="payment" *ngFor="let item of orders">
+  <div>
+    <div>
+      <p>Name :{{ item.name }}</p>
+      <p>Phone No. :{{ item.phone }}</p>
+      <p>
+        Delivery Address :{{ item.address }},{{ item.city }}-{{ item.pincode }}
+      </p>
+
+      <p>Total Amount To Pay:{{ item.price }}</p>
+      <p>Payment Mode : Cash</p>
+    </div>
+  </div>
+</div>

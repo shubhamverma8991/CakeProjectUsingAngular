@@ -1,0 +1,124 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#FFF"
+  type="ball-scale-multiple"
+>
+  <p
+    style="
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+      font-size: 20px;
+      color: white;
+    "
+  >
+    Getting Data
+  </p>
+</ngx-spinner>
+
+<!-- Main Html -->
+<section class="h-100 h-custom" style="background-color: #d2c9ff">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div
+          class="card card-registration card-registration-2"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-5"
+                  >
+                    <h1 class="fw-bold mb-0 text-black">Summary</h1>
+                    <h6 class="mb-0 text-muted">{{ cartSize }} Products</h6>
+                  </div>
+                  <hr class="my-4" />
+                  <div *ngIf="!size">
+                    <h3 style="text-align: center; color: red">
+                      Cart is Empty
+                    </h3>
+                  </div>
+                  <div
+                    class="row mb-4 d-flex justify-content-between align-items-center"
+                    *ngFor="let each of cake"
+                  >
+                    <!-- <div *ngIf="each.quantity"> -->
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <img
+                        [src]="each.image"
+                        class="img-fluid rounded-3"
+                        alt="Cotton T-shirt"
+                      />
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                      <!-- <h6 class="text-muted">Shirt</h6> -->
+                      <h6 class="text-black mb-0">{{ each.name }}</h6>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                      <p id="form1" name="quantity" style="width: 40px">
+                        {{ each.quantity }} x item
+                      </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h6 class="mb-0">&#8377; {{ each.price }}</h6>
+                    </div>
+
+                    <hr class="my-4" />
+                  </div>
+
+                  <hr class="my-4" />
+
+                  <div class="pt-5">
+                    <h6 class="mb-0">
+                      <a
+                        style="cursor: pointer"
+                        (click)="backtohome()"
+                        class="text-body"
+                        ><i class="fas fa-long-arrow-alt-left me-2"></i>Back to
+                        shop</a
+                      >
+                    </h6>
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 bg-grey">
+                <div class="p-5">
+                  <!-- <h3 class="fw-bold mb-5 mt-2 pt-1"></h3> -->
+                  <br />
+                  <br />
+                  <br />
+
+                  <hr class="my-4" />
+
+                  <br />
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">
+                      Total price <br />
+                      <h6 style="font-weight: normal" class="text-lowercase">
+                        for {{ quantity }} Items
+                      </h6>
+                    </h5>
+                    <h5>{{ finalprice }}</h5>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark"
+                    (click)="buy()"
+                  >
+                    Buy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

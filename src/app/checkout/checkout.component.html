@@ -1,0 +1,43 @@
+<div class="container">
+  <hr class="my-1" />
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="summary">Summary</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="value" routerLink="address">Address</a>
+      <a class="nav-link" *ngIf="!value">Address</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="myorder">My Order</a>
+    </li>
+  </ul>
+</div>
+<br />
+<br />
+<div class="container">
+  <router-outlet> </router-outlet>
+</div>
+
+<!-- 
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5" style="width: 150px">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="summary">Summary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="address">Address</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="payment">Payment</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
+</div> -->

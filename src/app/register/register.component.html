@@ -1,0 +1,54 @@
+<form
+  class="login"
+  #register="ngForm"
+  (ngSubmit)="register.valid && onSubmit()"
+>
+  <!-- for Name -->
+  <input
+    [(ngModel)]="name"
+    name="name"
+    type="text"
+    class="form-control form-control-lg"
+    id="exampleInputname"
+    aria-describedby="emailHelp"
+    placeholder="Name"
+    required
+    #namecheck="ngModel"
+  />
+  <div class="errormessage" *ngIf="register.submitted && namecheck.errors">
+    <label *ngIf="namecheck.errors['required']">*Name is Required</label>
+  </div>
+  <!-- for Email -->
+  <input
+    [(ngModel)]="email"
+    name="email"
+    type="email"
+    class="form-control form-control-lg"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+    placeholder="Email"
+    #emailcheck="ngModel"
+    required
+  />
+
+  <div class="errormessage" *ngIf="register.submitted && emailcheck.errors">
+    <label *ngIf="emailcheck.errors['required']">*Email is Required</label>
+  </div>
+  <!-- for password -->
+  <input
+    [(ngModel)]="password"
+    name="password"
+    type="password"
+    class="form-control form-control-lg"
+    id="exampleInputPassword1"
+    placeholder="Password"
+    #passwordcheck="ngModel"
+    required
+  />
+  <div class="errormessage" *ngIf="register.submitted && passwordcheck.errors">
+    <label *ngIf="passwordcheck.errors['required']"
+      >*Password is Required</label
+    >
+  </div>
+  <button type="submit" (click)="onSubmit()">Signup</button>
+</form>

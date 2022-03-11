@@ -1,0 +1,132 @@
+<div class="container border" style="background-color: rgb(241, 239, 239)">
+  <h1>Add Cake</h1>
+  <div class="border border-success container" style="background-color: white">
+    <br />
+
+    <form class="row g-3">
+      <img [src]="url" class="preview" *ngIf="url" />
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupFile01"
+          >Cake Image</label
+        >
+        <input
+          name="imageFIle"
+          type="file"
+          class="form-control"
+          id="image"
+          (change)="onselectFile($event)"
+        />
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="uploadImageToHTTP()"
+        >
+          Upload
+        </button>
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Cake Name</label>
+        <input
+          name="name"
+          [(ngModel)]="name"
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Cake Name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Price</label>
+        <input
+          name="price"
+          [(ngModel)]="price"
+          type="text"
+          class="form-control"
+          id="price"
+          placeholder="Cake Price"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Description</label>
+        <input
+          name="description"
+          [(ngModel)]="description"
+          type="text"
+          class="form-control"
+          id="description"
+          placeholder="Cake Description"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Weight(Kg)</label>
+        <input
+          name="weight"
+          [(ngModel)]="weight"
+          type="text"
+          class="form-control"
+          id="weight"
+          placeholder="Cake Weight In Kgs"
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Type</label>
+        <select
+          name="type"
+          [(ngModel)]="type"
+          id="inputState"
+          class="form-select"
+        >
+          <option>Sponge Cake</option>
+          <option>Butter Cake</option>
+          <option>Biscuit Cake</option>
+          <option>Chiffon Cake</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Flavour</label>
+        <input
+          name="flavour"
+          [(ngModel)]="flavour"
+          type="text"
+          class="form-control"
+          id="flavour"
+          placeholder="Cake Flavour"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="form-check">
+          <input
+            name="eggless"
+            [(ngModel)]="eggless"
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck"
+          />
+          <label class="form-check-label" for="gridCheck"> Eggless </label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Ingredients</label>
+        <input
+          name="ingredients"
+          [(ngModel)]="ingredients"
+          type="text"
+          class="form-control"
+          id="ingredients"
+          placeholder="Cake Ingredients"
+        />
+      </div>
+
+      <button
+        (click)="addcake()"
+        type="submit"
+        class="btn btn-success btn-lg btn-block"
+      >
+        Add Cake
+      </button>
+    </form>
+    <br />
+  </div>
+  <br />
+</div>

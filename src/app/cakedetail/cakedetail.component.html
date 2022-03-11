@@ -1,0 +1,60 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#FFF"
+  type="ball-scale-multiple"
+>
+  <br />
+  <br />
+  <br />
+  <br />
+</ngx-spinner>
+
+<main *ngIf="cakes" class="container">
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <img data-image="black" [src]="cakes.image" alt="cakes.image" />
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>Cake</span>
+      <h1>{{ cakes.name }}</h1>
+      <p>
+        {{ cakes.description }}
+      </p>
+    </div>
+
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+      <div class="product-color">
+        <span *ngIf="cakes.eggless">Eggless</span>
+        <span *ngIf="!cakes.eggless">With Egg</span>
+      </div>
+      <!-- Cable Configuration -->
+      <div class="cable-config">
+        <span>Cake Weight</span>
+
+        <div class="cable-choose">
+          <button>500g</button>
+          <button>1kg</button>
+          <button>2kg</button>
+        </div>
+
+        <a>*Picture May Vary with the Original Product</a>
+      </div>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{ cakes.price | currency: "INR" }}</span>
+      <a (click)="buynow()" style="cursor: pointer" class="cart-btn">Buy Now</a>
+      &nbsp;&nbsp;
+      <a (click)="addtoCart()" style="cursor: pointer" class="cart-btn"
+        >Add to cart</a
+      >
+    </div>
+  </div>
+</main>
